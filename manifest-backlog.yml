@@ -2,11 +2,11 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog.megovindhraju.cfapps.io
+  - route: backlog-me-govindhraju.cfapps.io
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://megovindhraju.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: http://me-govindhraju.cfapps.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-backlog-database
