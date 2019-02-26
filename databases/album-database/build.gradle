@@ -1,0 +1,28 @@
+import org.flywaydb.gradle.FlywayExtension
+import org.flywaydb.gradle.task.FlywayMigrateTask
+
+buildscript {
+    dependencies {
+        classpath "mysql:mysql-connector-java:$mysqlVersion"
+    }
+}
+
+plugins {
+    id "org.flywaydb.flyway" version "5.2.1"
+}
+
+flyway {
+    url = "jdbc:mysql://localhost:3306/albums?useSSL=false"
+    user = "root"
+    outOfOrder = false
+}
+
+task cfMigrate(type: FlywayMigrateTask) {
+    extension = new FlywayExtension(
+            url: "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_a67549d3f6ffaff?user=bc5e550a039453\u0026password=e09c5860",
+            user: "bc5e550a039453",
+            password: "e09c5860",
+            outOfOrder: false
+    )
+}
+
